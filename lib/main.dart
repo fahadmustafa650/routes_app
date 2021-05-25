@@ -31,27 +31,27 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: CustomSplashScreen.id,
       routes: {
-        CustomSplashScreen.id: (context) => CustomSplashScreen(),
-        WelcomeScreen.id: (context) => WelcomeScreen(),
+        AttendanceLogScreen.id: (context) => AttendanceLogScreen(), //
+        CustomSplashScreen.id: (context) => CustomSplashScreen(), //
         DeliveryInvoiceScreen.id: (context) => DeliveryInvoiceScreen(),
-        OrderPlacingScreen.id: (context) => OrderPlacingScreen(),
-        StartTripScreen.id: (context) => StartTripScreen(),
+        DeliveryPointDetailsScreen.id: (context) =>
+            DeliveryPointDetailsScreen(), //
+        DeliveryPointsScreen.id: (context) => DeliveryPointsScreen(), //
         DriverVerificationScreen.id: (context) => DriverVerificationScreen(),
-        AttendanceLogScreen.id: (context) => AttendanceLogScreen(),
-        DeliveryPointsScreen.id: (context) => DeliveryPointsScreen(),
-        UpdateProfileScreen.id: (context) => UpdateProfileScreen(),
-        RoutesTodayScreen.id: (context) => RoutesTodayScreen(),
         ExpenseManagerScreen.id: (context) => ExpenseManagerScreen(),
-        TollChargesScreen.id: (context) => TollChargesScreen(),
         FoodExpenseScreen.id: (context) => FoodExpenseScreen(),
-        WorkshopExpenseScreen.id: (context) => WorkshopExpenseScreen(),
-        RoutesCoveredScreen.id: (context) => RoutesCoveredScreen(),
         FuelExpenseScreen.id: (context) => FuelExpenseScreen(),
         LabourChargesScreen.id: (context) => LabourChargesScreen(),
+        OrderPlacingScreen.id: (context) => OrderPlacingScreen(),
         PaymentSectionScreen.id: (context) => PaymentSectionScreen(),
-        DeliveryPointDetailsScreen.id: (context) =>
-            DeliveryPointDetailsScreen(),
+        RoutesCoveredScreen.id: (context) => RoutesCoveredScreen(),
+        RoutesTodayScreen.id: (context) => RoutesTodayScreen(),
+        StartTripScreen.id: (context) => StartTripScreen(),
         SupportScreen.id: (context) => SupportScreen(),
+        TollChargesScreen.id: (context) => TollChargesScreen(),
+        UpdateProfileScreen.id: (context) => UpdateProfileScreen(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        WorkshopExpenseScreen.id: (context) => WorkshopExpenseScreen(),
       },
     );
   }

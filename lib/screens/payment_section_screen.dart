@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:routes_app/Constants/constants.dart';
+import 'package:routes_app/screens/order_placing_screen.dart';
 
 import 'delivery_point_details_screen.dart';
 
@@ -32,7 +33,9 @@ class _PaymentSectionScreenState extends State<PaymentSectionScreen> {
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -199,7 +202,9 @@ class _PaymentSectionScreenState extends State<PaymentSectionScreen> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, OrderPlacingScreen.id);
+                },
                 child: CustomTextIconWhiteWidget(
                   screenWidth: screenWidth,
                   title: 'Confirm & Pay',

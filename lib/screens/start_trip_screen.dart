@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
+import 'package:routes_app/screens/support_screen.dart';
 import 'driver_verification_screen.dart';
 
 class StartTripScreen extends StatefulWidget {
@@ -16,18 +17,20 @@ class _StartTripScreenState extends State<StartTripScreen> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, DriverVerificationScreen.id);
-              },
-              child: Image(
-                image: AssetImage('assets/images/person_trailing.png'),
-              ))
+          // GestureDetector(
+          //     onTap: () {
+          //       Navigator.pushNamed(context, DriverVerificationScreen.id);
+          //     },
+          //     child: Image(
+          //       image: AssetImage('assets/images/person_trailing.png'),
+          //     ))
         ],
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -77,7 +80,9 @@ class _StartTripScreenState extends State<StartTripScreen> {
                 height: 30,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, SupportScreen.id);
+                },
                 child: CustomTextIconWidget(
                   title: 'Start Driving',
                   screenWidth: screenWidth,

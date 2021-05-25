@@ -30,7 +30,7 @@ class _FuelExpenseScreenState extends State<FuelExpenseScreen> {
         actions: [
           GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, LabourChargesScreen.id);
+                //Navigator.pushNamed(context, LabourChargesScreen.id);
               },
               child: Image(
                 image: AssetImage('assets/images/person_trailing.png'),
@@ -39,7 +39,9 @@ class _FuelExpenseScreenState extends State<FuelExpenseScreen> {
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),

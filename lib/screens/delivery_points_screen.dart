@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
 import 'package:routes_app/Screens/routes_today_screen.dart';
 
+import 'delivery_point_details_screen.dart';
 import 'update_profile_screen.dart';
 
 class DeliveryPointsScreen extends StatelessWidget {
@@ -25,7 +26,9 @@ class DeliveryPointsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -128,6 +131,9 @@ class CustomAddressIconTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: () {
+        Navigator.pushNamed(context, DeliveryPointDetailsScreen.id);
+      },
       contentPadding: EdgeInsets.symmetric(horizontal: 30),
       title: Text(
         titleText,

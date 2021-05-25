@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
 import 'package:routes_app/Screens/toll_charges_screen.dart';
 
+import 'delivery_points_screen.dart';
 import 'expense_manager_screen.dart';
 
 class RoutesTodayScreen extends StatelessWidget {
@@ -12,19 +13,13 @@ class RoutesTodayScreen extends StatelessWidget {
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, ExpenseManagerScreen.id);
-              },
-              child: Image(
-                image: AssetImage('assets/images/person_trailing.png'),
-              ))
-        ],
+        actions: [],
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -159,6 +154,9 @@ class CustomDirectionsTile extends StatelessWidget {
     return Container(
       height: screenHeight * 0.2,
       child: ListTile(
+        onTap: () {
+          Navigator.pushNamed(context, DeliveryPointsScreen.id);
+        },
         tileColor: textColor == Colors.white ? Colors.lightBlue : Colors.white,
         contentPadding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         title: Text(

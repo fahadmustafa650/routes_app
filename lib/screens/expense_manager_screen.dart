@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
-import 'package:routes_app/Screens/toll_charges_screen.dart';
+import 'package:routes_app/screens/food_expense_screen.dart';
+import 'package:routes_app/screens/fuel_expense_screen.dart';
+import 'package:routes_app/screens/labour_charges_screen.dart';
+import 'package:routes_app/screens/toll_charges_screen.dart';
+import 'package:routes_app/screens/workshop_expense_screen.dart';
+import 'package:routes_app/screens/toll_charges_screen.dart';
 
 class ExpenseManagerScreen extends StatelessWidget {
   static final id = "/expense_manager_screen";
@@ -18,18 +23,20 @@ class ExpenseManagerScreen extends StatelessWidget {
       backgroundColor: darkBlueColor,
       appBar: AppBar(
         actions: [
-          GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, TollChargesScreen.id);
-              },
-              child: Image(
-                image: AssetImage('assets/images/person_trailing.png'),
-              ))
+          // GestureDetector(
+          //     onTap: () {
+          //       Navigator.pushNamed(context, TollChargesScreen.id);
+          //     },
+          //     child: Image(
+          //       image: AssetImage('assets/images/person_trailing.png'),
+          //     ))
         ],
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -57,29 +64,54 @@ class ExpenseManagerScreen extends StatelessWidget {
             thickness: 0.5,
             color: Colors.white,
           ),
-          CustomTItleTrailingTile(
-            screenWidth: screenWidth,
-            title: 'Fuel Expenses',
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, FuelExpenseScreen.id);
+            },
+            child: CustomTItleTrailingTile(
+              screenWidth: screenWidth,
+              title: 'Fuel Expenses',
+            ),
           ),
           divider,
-          CustomTItleTrailingTile(
-            screenWidth: screenWidth,
-            title: 'Food Expenses',
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, FoodExpenseScreen.id);
+            },
+            child: CustomTItleTrailingTile(
+              screenWidth: screenWidth,
+              title: 'Food Expenses',
+            ),
           ),
           divider,
-          CustomTItleTrailingTile(
-            screenWidth: screenWidth,
-            title: 'Workshop',
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, WorkshopExpenseScreen.id);
+            },
+            child: CustomTItleTrailingTile(
+              screenWidth: screenWidth,
+              title: 'Workshop',
+            ),
           ),
           divider,
-          CustomTItleTrailingTile(
-            screenWidth: screenWidth,
-            title: 'Toll Charges',
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, TollChargesScreen.id);
+            },
+            child: CustomTItleTrailingTile(
+              screenWidth: screenWidth,
+              title: 'Toll Charges',
+            ),
           ),
           divider,
-          CustomTItleTrailingTile(
-            screenWidth: screenWidth,
-            title: 'Labour Charges',
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, LabourChargesScreen.id);
+            },
+            child: CustomTItleTrailingTile(
+              screenWidth: screenWidth,
+              title: 'Labour Charges',
+            ),
           ),
           divider,
         ],

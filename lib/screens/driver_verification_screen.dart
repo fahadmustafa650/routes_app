@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
+import 'package:routes_app/screens/start_trip_screen.dart';
 import 'package:routes_app/widgets/animated_rotation.dart';
 import 'package:routes_app/widgets/text_icons_widget.dart';
 
@@ -35,7 +36,7 @@ class _DriverVerificationScreenState extends State<DriverVerificationScreen>
         actions: [
           GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, AttendanceLogScreen.id);
+                Navigator.pushNamed(context, StartTripScreen.id);
               },
               child: Image(
                 image: AssetImage('assets/images/person_trailing.png'),
@@ -44,7 +45,9 @@ class _DriverVerificationScreenState extends State<DriverVerificationScreen>
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -110,7 +113,9 @@ class _DriverVerificationScreenState extends State<DriverVerificationScreen>
               height: 15,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, StartTripScreen.id);
+              },
               child: CustomIconsTextWidget(
                 screenWidth: screenWidth,
                 title: 'Upload License',
@@ -126,9 +131,14 @@ class _DriverVerificationScreenState extends State<DriverVerificationScreen>
             SizedBox(
               height: 10,
             ),
-            CustomIconsTextWidget(
-              screenWidth: screenWidth,
-              title: 'Speedometer',
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, StartTripScreen.id);
+              },
+              child: CustomIconsTextWidget(
+                screenWidth: screenWidth,
+                title: 'Speedometer',
+              ),
             ),
             SizedBox(
               height: 25,

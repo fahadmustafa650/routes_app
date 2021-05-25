@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
 
 import 'order_placing_screen.dart';
+import 'payment_section_screen.dart';
 
 class DeliveryInvoiceScreen extends StatelessWidget {
   static final id = "/delivery_invoice_screen";
@@ -23,7 +24,9 @@ class DeliveryInvoiceScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -170,7 +173,9 @@ class DeliveryInvoiceScreen extends StatelessWidget {
   Widget proceedToPaymentBtn(
       BuildContext context, double screenWidth, double screenHeight) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, PaymentSectionScreen.id);
+      },
       child: Container(
         width: screenWidth * 0.7,
         height: screenHeight * 0.09,

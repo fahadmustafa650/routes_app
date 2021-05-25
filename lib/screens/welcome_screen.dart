@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
+import 'package:routes_app/screens/driver_verification_screen.dart';
 
+import 'attendance_log_screen.dart';
 import 'delivery_invoice_screen.dart';
+import 'expense_manager_screen.dart';
+import 'routes_covered_screen.dart';
+import 'routes_today_screen.dart';
+import 'update_profile_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   static final id = "/welcome_screen";
@@ -14,7 +20,7 @@ class WelcomeScreen extends StatelessWidget {
         actions: [
           GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, DeliveryInvoiceScreen.id);
+                Navigator.pushNamed(context, DriverVerificationScreen.id);
               },
               child: Image(
                 image: AssetImage('assets/images/person_trailing.png'),
@@ -23,7 +29,9 @@ class WelcomeScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
@@ -59,13 +67,7 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            GestureDetector(
-              onTap: () {},
-              child: WhiteTextButton(
-                screenWidth: screenWidth,
-                title: 'Routes Today',
-              ),
-            ),
+            routesTodayBtn(context, screenWidth),
             SizedBox(
               height: 15,
             ),
@@ -78,41 +80,81 @@ class WelcomeScreen extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            GestureDetector(
-              child: WhiteTextButton(
-                screenWidth: screenWidth,
-                title: 'Routes Covered',
-              ),
-            ),
+            routesCoveredBtn(context, screenWidth),
             SizedBox(
               height: 15,
             ),
-            GestureDetector(
-              child: WhiteTextButton(
-                screenWidth: screenWidth,
-                title: 'Attendance Log',
-              ),
-            ),
+            attendanceLogBtn(context, screenWidth),
             SizedBox(
               height: 15,
             ),
-            GestureDetector(
-              child: WhiteTextButton(
-                screenWidth: screenWidth,
-                title: 'Profile Updation',
-              ),
-            ),
+            profileUpdationBtn(context, screenWidth),
             SizedBox(
               height: 15,
             ),
-            GestureDetector(
-              child: WhiteTextButton(
-                screenWidth: screenWidth,
-                title: 'Expense Manager',
-              ),
-            ),
+            expenseManager(context, screenWidth),
           ],
         ),
+      ),
+    );
+  }
+
+  GestureDetector expenseManager(BuildContext context, double screenWidth) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, ExpenseManagerScreen.id);
+      },
+      child: WhiteTextButton(
+        screenWidth: screenWidth,
+        title: 'Expense Manager',
+      ),
+    );
+  }
+
+  GestureDetector profileUpdationBtn(BuildContext context, double screenWidth) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, UpdateProfileScreen.id);
+      },
+      child: WhiteTextButton(
+        screenWidth: screenWidth,
+        title: 'Profile Updation',
+      ),
+    );
+  }
+
+  GestureDetector attendanceLogBtn(BuildContext context, double screenWidth) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, AttendanceLogScreen.id);
+      },
+      child: WhiteTextButton(
+        screenWidth: screenWidth,
+        title: 'Attendance Log',
+      ),
+    );
+  }
+
+  GestureDetector routesCoveredBtn(BuildContext context, double screenWidth) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, RoutesCoveredScreen.id);
+      },
+      child: WhiteTextButton(
+        screenWidth: screenWidth,
+        title: 'Routes Covered',
+      ),
+    );
+  }
+
+  GestureDetector routesTodayBtn(BuildContext context, double screenWidth) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, RoutesTodayScreen.id);
+      },
+      child: WhiteTextButton(
+        screenWidth: screenWidth,
+        title: 'Routes Today',
       ),
     );
   }

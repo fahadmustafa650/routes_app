@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:routes_app/Constants/constants.dart';
 
+import 'delivery_invoice_screen.dart';
 import 'support_screen.dart';
 
 class DeliveryPointDetailsScreen extends StatelessWidget {
@@ -19,7 +20,7 @@ class DeliveryPointDetailsScreen extends StatelessWidget {
         actions: [
           GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, SupportScreen.id);
+                Navigator.pushNamed(context, DeliveryInvoiceScreen.id);
               },
               child: Image(
                 image: AssetImage('assets/images/person_trailing.png'),
@@ -28,7 +29,9 @@ class DeliveryPointDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Color(0xff164172),
